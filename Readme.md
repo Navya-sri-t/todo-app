@@ -6,7 +6,7 @@ Before getting into these steps make sure that you have virtual environment wrap
 # Change the current directory to api folder : cd api
 # Create a virtual environment: virtualenv virtualenv_name
 # Activate virtual env:Scripts/activate
-# Installing the djangorestframework:pip install django djangorestframework
+# Install django REST framework:pip install django djangorestframework
 # Integrating django and postgradesql:In the API/api/settings.py in the DATABASE dictonary for the key PASSWORD enter the password the one which you created while installing postgres
 # pip install psycopg2
 # python manage.py migrate
