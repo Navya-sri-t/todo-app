@@ -44,3 +44,34 @@
 }
 
 
+.modal_body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:10px;
+    padding:2rem;
+}
+.modal_body > label{
+    font-weight:bolder;
+}
+.modal_body > input{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.model_close{
+    border:none;
+    border-radius:0.2rem;
+    background-color: red;
+    color:white;
+    margin-right:5px;
+    margin-bottom:5px;
+    padding:0rem 1rem;
+}
+.model_save{
+    border:none;
+    border-radius:0.2rem;
+    background-color: cyan;
+    padding:0rem 1rem;
+    margin-bottom:5px;
+    
+}

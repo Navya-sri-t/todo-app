@@ -24,6 +24,7 @@ useEffect(()=>{
 
 async function addtodo(newtodo){
   try{
+    console.log(newtodo)
     await axios.post('/api/v1/todo/', newtodo)
     gettodos()
 
@@ -36,12 +37,22 @@ async function addtodo(newtodo){
 async function completetodo(id){
   try{
     const todo=state.filter(todo=>todo.id===id)[0]
-    todo.completed=true
     console.log(todo)
+    todo.completed=true
     await axios.put(`/api/v1/todo/${id}/`,todo)
     gettodos()
   }
   catch(err){
+    console.log(err)
+  }
+}
+
+async function edittodo(todo) {
+  try {
+    console.log(todo)
+    await axios.put(`/api/v1/todo/${todo.id}/`, todo)
+    gettodos()
+  } catch(err) {
     console.log(err)
   }
 }
@@ -57,21 +68,14 @@ async function deletetodo(id){
   }
 }
 
-async function edittodo(todo) {
-  try {
-    await axios.put(`/api/v1/todo/${todo.id}/`, todo)
-    gettodos()
-  } catch(err) {
-    console.log(err)
-  }
-}
+
 
   return (
     <div>
       <Addtodo addtodo={addtodo}/>
       {state.map((item,index)=>(
 
-        !item.completed && <Todo key={index} id={item.id} title={item.title} discription={item.description} date={item.date} completetodo={completetodo}  deletetodo={deletetodo} edittodo={edittodo}/>
+        !item.completed && <Todo key={index} id={item.id} title={item.title} description={item.description} date={item.date} completetodo={completetodo}  deletetodo={deletetodo} edittodo={edittodo}/>
       ))}
      
     </div>

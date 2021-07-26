@@ -4,9 +4,9 @@ import {useState} from 'react';
 
 function Addtodo({addtodo}) {
   
-  const[title,settitle]=useState('')
-  const[description,setdiscription]=useState('')
-  const[date,setdate]=useState('')
+  const [title,settitle]=useState('')
+  const [description,setdescription]=useState('')
+  const [date,setdate]=useState('')
 
     function addtodohandler(e){
         e.preventDefault()
@@ -29,7 +29,7 @@ function Addtodo({addtodo}) {
                 <h5>Title</h5>
                      <input type="text" placeholder="title" onChange={e=>settitle(e.target.value)}/>
                     <h5>Discription</h5>
-                    <textarea rows="4" cols="4" type="text" placeholder="discription" onChange={e=>setdiscription(e.target.value)}/>
+                    <textarea rows="4" cols="4" type="text" placeholder="discription" onChange={e=>setdescription(e.target.value)}/>
                     <h5>Date</h5>
                     <input type="date" onChange={e=>setdate(e.target.value)}></input>
                     
@@ -38,7 +38,8 @@ function Addtodo({addtodo}) {
                     
                     
                     
-                    <button type="submit" onClick={addtodohandler}>Add todo</button>
+                     <button type="submit" onClick={addtodohandler}>Add todo</button>
+                            
 
 
 
