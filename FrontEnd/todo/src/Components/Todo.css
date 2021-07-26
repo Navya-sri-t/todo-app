@@ -20,7 +20,7 @@
 }
 
 
-/* .todo_edit{
+.todo_edit{
     
    border:none;
    background-color: blue;
@@ -29,7 +29,8 @@
    font-weight:bold;
    color:white;
    border-radius:0.2rem;
-} */
+   margin-right:5px;
+}
 .todo_delete{
     border:none;
     padding-top:1.5px;

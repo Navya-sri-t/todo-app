@@ -11,7 +11,6 @@ function App() {
         const response=await axios.get("/api/v1/todo/")
         const {data}=response
         setstate(data)
-        console.log(data)
 
     }
     catch(err){
@@ -25,7 +24,6 @@ useEffect(()=>{
 
 async function addtodo(newtodo){
   try{
-    console.log(newtodo)
     await axios.post('/api/v1/todo/', newtodo)
     gettodos()
 
@@ -59,14 +57,21 @@ async function deletetodo(id){
   }
 }
 
-
+async function edittodo(todo) {
+  try {
+    await axios.put(`/api/v1/todo/${todo.id}/`, todo)
+    gettodos()
+  } catch(err) {
+    console.log(err)
+  }
+}
 
   return (
     <div>
       <Addtodo addtodo={addtodo}/>
       {state.map((item,index)=>(
 
-        !item.completed && <Todo key={index} id={item.id} title={item.title} discription={item.description} date={item.date} completetodo={completetodo}  deletetodo={deletetodo} />
+        !item.completed && <Todo key={index} id={item.id} title={item.title} discription={item.description} date={item.date} completetodo={completetodo}  deletetodo={deletetodo} edittodo={edittodo}/>
       ))}
      
     </div>

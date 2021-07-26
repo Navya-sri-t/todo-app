@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Todo.css';
+import Model from './Models';
 
 
-function Todo({id,title,discription,date,completetodo,deletetodo}) {
 
+function Todo({id,title,discription,date,completetodo,deletetodo,edittodo}) {
+    const [show,setshow]=useState(false)
 
     
     return (
@@ -21,7 +23,8 @@ function Todo({id,title,discription,date,completetodo,deletetodo}) {
                 
                 
                
-                {/* <button className="todo_edit" >Edit</button> */}
+                <button className="todo_edit"  onClick={()=>setshow(true)}>Edit</button>
+                <Model show={show} id={id} title={title} discription={discription} edittodo={edittodo}/>
                 <button className="todo_delete" onClick={()=>deletetodo(id)}>Delete</button>
                 </form>
 
